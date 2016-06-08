@@ -11,8 +11,17 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'http://blog.linkgo.io/',
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@sandbox249320b734964f25b665eabaf91a22a3.mailgun.org',
+                    pass: '123456'
+                }
+            }
+	},
         database: {
             client: 'sqlite3',
             connection: {
